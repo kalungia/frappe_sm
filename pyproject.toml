@@ -1,5 +1,5 @@
 [project]
-name = "social_management"
+name = "frappe_sm"
 authors = [
     { name = "Abraham Kalungi", email = "abrahamskalungi@gmail.com"}
 ]

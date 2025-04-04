@@ -1,4 +1,4 @@
-### Social Management
+### Frappe Social Media Management
 
 To Manage All Socail Media Accounts
 

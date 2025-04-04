@@ -1,5 +1,5 @@
-app_name = "social_management"
-app_title = "Social Management"
+app_name = "frappe_sm"
+app_title = "Frappe Social Management"
 app_publisher = "Abraham Kalungi"
 app_description = "To Manage All Socail Media Accounts"
 app_email = "abrahamskalungi@gmail.com"
@@ -10,15 +10,15 @@ app_license = "mit"
 # ------------------
 
 # include js, css files in header of desk.html
-# app_include_css = "/assets/social_management/css/social_management.css"
-# app_include_js = "/assets/social_management/js/social_management.js"
+# app_include_css = "/assets/frappe_sm/css/frappe_sm.css"
+# app_include_js = "/assets/frappe_sm/js/frappe_sm.js"
 
 # include js, css files in header of web template
-# web_include_css = "/assets/social_management/css/social_management.css"
-# web_include_js = "/assets/social_management/js/social_management.js"
+# web_include_css = "/assets/frappe_sm/css/frappe_sm.css"
+# web_include_js = "/assets/frappe_sm/js/frappe_sm.js"
 
 # include custom scss in every website theme (without file extension ".scss")
-# website_theme_scss = "social_management/public/scss/website"
+# website_theme_scss = "frappe_sm/public/scss/website"
 
 # include js, css files in header of web form
 # webform_include_js = {"doctype": "public/js/doctype.js"}
@@ -36,7 +36,7 @@ app_license = "mit"
 # Svg Icons
 # ------------------
 # include app icons in desk
-# app_include_icons = "social_management/public/icons.svg"
+# app_include_icons = "frappe_sm/public/icons.svg"
 
 # Home Pages
 # ----------
@@ -60,43 +60,43 @@ app_license = "mit"
 
 # add methods and filters to jinja environment
 # jinja = {
-# 	"methods": "social_management.utils.jinja_methods",
-# 	"filters": "social_management.utils.jinja_filters"
+# 	"methods": "frappe_sm.utils.jinja_methods",
+# 	"filters": "frappe_sm.utils.jinja_filters"
 # }
 
 # Installation
 # ------------
 
-# before_install = "social_management.install.before_install"
-# after_install = "social_management.install.after_install"
+# before_install = "frappe_sm.install.before_install"
+# after_install = "frappe_sm.install.after_install"
 
 # Uninstallation
 # ------------
 
-# before_uninstall = "social_management.uninstall.before_uninstall"
-# after_uninstall = "social_management.uninstall.after_uninstall"
+# before_uninstall = "frappe_sm.uninstall.before_uninstall"
+# after_uninstall = "frappe_sm.uninstall.after_uninstall"
 
 # Integration Setup
 # ------------------
 # To set up dependencies/integrations with other apps
 # Name of the app being installed is passed as an argument
 
-# before_app_install = "social_management.utils.before_app_install"
-# after_app_install = "social_management.utils.after_app_install"
+# before_app_install = "frappe_sm.utils.before_app_install"
+# after_app_install = "frappe_sm.utils.after_app_install"
 
 # Integration Cleanup
 # -------------------
 # To clean up dependencies/integrations with other apps
 # Name of the app being uninstalled is passed as an argument
 
-# before_app_uninstall = "social_management.utils.before_app_uninstall"
-# after_app_uninstall = "social_management.utils.after_app_uninstall"
+# before_app_uninstall = "frappe_sm.utils.before_app_uninstall"
+# after_app_uninstall = "frappe_sm.utils.after_app_uninstall"
 
 # Desk Notifications
 # ------------------
 # See frappe.core.notifications.get_notification_config
 
-# notification_config = "social_management.notifications.get_notification_config"
+# notification_config = "frappe_sm.notifications.get_notification_config"
 
 # Permissions
 # -----------
@@ -135,39 +135,39 @@ app_license = "mit"
 
 # scheduler_events = {
 # 	"all": [
-# 		"social_management.tasks.all"
+# 		"frappe_sm.tasks.all"
 # 	],
 # 	"daily": [
-# 		"social_management.tasks.daily"
+# 		"frappe_sm.tasks.daily"
 # 	],
 # 	"hourly": [
-# 		"social_management.tasks.hourly"
+# 		"frappe_sm.tasks.hourly"
 # 	],
 # 	"weekly": [
-# 		"social_management.tasks.weekly"
+# 		"frappe_sm.tasks.weekly"
 # 	],
 # 	"monthly": [
-# 		"social_management.tasks.monthly"
+# 		"frappe_sm.tasks.monthly"
 # 	],
 # }
 
 # Testing
 # -------
 
-# before_tests = "social_management.install.before_tests"
+# before_tests = "frappe_sm.install.before_tests"
 
 # Overriding Methods
 # ------------------------------
 #
 # override_whitelisted_methods = {
-# 	"frappe.desk.doctype.event.event.get_events": "social_management.event.get_events"
+# 	"frappe.desk.doctype.event.event.get_events": "frappe_sm.event.get_events"
 # }
 #
 # each overriding function accepts a `data` argument;
 # generated from the base implementation of the doctype dashboard,
 # along with any modifications made in other Frappe apps
 # override_doctype_dashboards = {
-# 	"Task": "social_management.task.get_dashboard_data"
+# 	"Task": "frappe_sm.task.get_dashboard_data"
 # }
 
 # exempt linked doctypes from being automatically cancelled
@@ -181,13 +181,13 @@ app_license = "mit"
 
 # Request Events
 # ----------------
-# before_request = ["social_management.utils.before_request"]
-# after_request = ["social_management.utils.after_request"]
+# before_request = ["frappe_sm.utils.before_request"]
+# after_request = ["frappe_sm.utils.after_request"]
 
 # Job Events
 # ----------
-# before_job = ["social_management.utils.before_job"]
-# after_job = ["social_management.utils.after_job"]
+# before_job = ["frappe_sm.utils.before_job"]
+# after_job = ["frappe_sm.utils.after_job"]
 
 # User Data Protection
 # --------------------
@@ -217,7 +217,7 @@ app_license = "mit"
 # --------------------------------
 
 # auth_hooks = [
-# 	"social_management.auth.validate"
+# 	"frappe_sm.auth.validate"
 # ]
 
 # Automatically update python controller files with type annotations for this app.
