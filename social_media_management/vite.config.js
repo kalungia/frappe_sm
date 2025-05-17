@@ -12,7 +12,7 @@ export default defineConfig({
     },
   },
   build: {
-    outDir: `../${path.basename(path.resolve('..'))}/public/social media management`,
+    outDir: `../${path.basename(path.resolve('..'))}/public/social_media_management`,
     emptyOutDir: true,
     target: 'es2015',
   },
