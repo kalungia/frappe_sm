@@ -16,7 +16,7 @@ const routes = [
 ]
 
 let router = createRouter({
-  history: createWebHistory('/social media management'),
+  history: createWebHistory('/social_media_management'),
   routes,
 })
 
