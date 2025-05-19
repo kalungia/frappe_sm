@@ -1,12 +1,17 @@
-const defaultTheme = require('tailwindcss/defaultTheme')
+import defaultTheme from 'tailwindcss/defaultTheme'
+import frappeUIPreset from 'frappe-ui/src/tailwind/preset'
 
-module.exports = {
-  presets: [require('frappe-ui/src/utils/tailwind.config')],
+export default {
+  presets: [frappeUIPreset],
   content: [
     './index.html',
     './src/**/*.{vue,js,ts,jsx,tsx}',
-    './node_modules/frappe-ui/src/components/**/*.{vue,js,ts,jsx,tsx}',
+    './node_modules/frappe-ui/src/**/*.{vue,js,ts,jsx,tsx}',
+    '../node_modules/frappe-ui/src/**/*.{vue,js,ts,jsx,tsx}',
+    './node_modules/frappe-ui/frappe/**/*.{vue,js,ts,jsx,tsx}',
+    '../node_modules/frappe-ui/frappe/**/*.{vue,js,ts,jsx,tsx}',
   ],
+  safelist: [{ pattern: /!(text|bg)-/, variants: ['hover', 'active'] }],
   theme: {
     extend: {
       colors: {
