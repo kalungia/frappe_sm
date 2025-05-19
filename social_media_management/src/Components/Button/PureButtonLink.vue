@@ -1,6 +1,15 @@
-<script setup>
-import { Link } from '@inertiajs/vue3';
+<template>
+    <component
+        :is="as"
+        :href="as === 'a' ? href : undefined"
+        :type="as === 'button' ? type : undefined"
+        class="relative inline-flex items-center text-gray-400 hover:text-indigo-500 transition-colors ease-in-out duration-200"
+    >
+        <slot/>
+    </component>
+</template>
 
+<script setup>
 const props = defineProps({
     href: {
         type: String,
@@ -20,8 +29,3 @@ const props = defineProps({
     }
 });
 </script>
-<template>
-    <Link :href="href" :methods="method" :as="as" :type="type" class="relative inline-flex items-center text-gray-400 hover:text-indigo-500 transition-colors ease-in-out duration-200">
-        <slot/>
-    </Link>
-</template>

@@ -6,7 +6,7 @@
         </aside>
 
         <main class="w-full xl:main flex flex-col overflow-y-auto" scroll-region>
-            <Navigation/>
+            <NavBar/>
             <slot/>
         </main>
 
@@ -30,27 +30,23 @@
 
 <script setup>
 import Sidebar from "@/Components/Sidebar/Sidebar.vue";
-import Navigation from "@/Components/Navigation/NavBar.vue";
+import NavBar from "@/Components/Navigation/NavBar.vue";
 import Notifications from "@/Components/Util/Notifications.vue";
 
-import {onUnmounted, provide, reactive} from "vue";
-import {router} from "@inertiajs/vue3";
+import { onBeforeRouteUpdate } from 'vue-router';
+import { onUnmounted, provide, reactive } from "vue";
 
 const context = reactive({
-    showAside: false,
-    dashboard_filter: {
-        account_id: null,
-        period: '30_days'
-    }
+  showAside: false,
+  dashboard_filter: {
+    account_id: null,
+    period: '30_days'
+  }
 });
 
 provide('appContext', context);
 
-const removeStartEventListener = router.on('start', () => {
-    context.showAside = false;
+onBeforeRouteUpdate(() => {
+  context.showAside = false;
 });
-
-onUnmounted(() => {
-    removeStartEventListener();
-})
 </script>

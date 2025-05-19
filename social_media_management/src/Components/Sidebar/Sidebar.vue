@@ -15,7 +15,7 @@
 
         <div class="flex flex-col space-y-lg overflow-y-auto px-xl mt-2xl h-full">
             <MenuGroupBody>
-                <MenuItem :url="'Dashboard'" :active="$page.component === 'Dashboard'">
+                <MenuItem :url="'Dashboard'" :active="route.name === 'Dashboard'">
                     <template #icon>
                         <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
                              stroke="currentColor" stroke-width="2">
@@ -35,19 +35,19 @@
             </MenuGroupHeader>
             <MenuGroupBody>
                 <MenuItem :url="'Dashboard'"
-                          :active="$page.component === 'Posts/Index'">
+                          :active="route.name === 'Posts/Index'">
                     <template #icon>
                         <GridIcon/>
                     </template>
                     Posts
                 </MenuItem>
-                <MenuItem :url="'Dashboard'" :active="$page.component === 'Calendar'">
+                <MenuItem :url="'Dashboard'" :active="route.name === 'Calendar'">
                     <template #icon>
                         <CalendarIcon/>
                     </template>
                     Calendar
                 </MenuItem>
-                <MenuItem :url="'Dashboard'" :active="$page.component === 'Media'">
+                <MenuItem :url="'Dashboard'" :active="route.name === 'Media'">
                     <template #icon>
                         <PhotoIcon/>
                     </template>
@@ -59,19 +59,19 @@
                 Configuration
             </MenuGroupHeader>
             <MenuGroupBody>
-                <MenuItem :url="'Dashboard'" :active="$page.component === 'Accounts/Accounts'">
+                <MenuItem :url="'Dashboard'" :active="route.name === 'Accounts/Accounts'">
                     <template #icon>
                         <ShareIcon/>
                     </template>
                     Social Accounts
                 </MenuItem>
-                <MenuItem :url="'Dashboard'" :active="$page.component === 'Services'">
+                <MenuItem :url="'Dashboard'" :active="route.name === 'Services'">
                     <template #icon>
                         <ServerStackIcon/>
                     </template>
                     Services
                 </MenuItem>
-                <MenuItem :url="'Dashboard'" :active="$page.component === 'Settings'">
+                <MenuItem :url="'Dashboard'" :active="route.name === 'Settings'">
                     <template #icon>
                         <CogIcon/>
                     </template>
@@ -83,13 +83,13 @@
                 System
             </MenuGroupHeader>
             <MenuGroupBody>
-                <MenuItem :url="'Dashboard'" :active="$page.component === 'System/Status'">
+                <MenuItem :url="'Dashboard'" :active="route.name === 'System/Status'">
                     <template #icon>
                         <InformationCircle/>
                     </template>
                     Status
                 </MenuItem>
-                <MenuItem :url="'Dashboard'" :active="$page.component === 'System/Logs'">
+                <MenuItem :url="'Dashboard'" :active="route.name === 'System/Logs'">
                     <template #icon>
                         <Document/>
                     </template>
@@ -104,7 +104,7 @@
     </div>
 </template>
 <script setup>
-import {Link} from '@inertiajs/vue3';
+import { useRoute } from 'vue-router';
 import Logo from "@/Components/DataDisplay/Logo.vue"
 import MenuItem from "@/Components/Sidebar/MenuItem.vue"
 import MenuDelimiter from "@/Components/Sidebar/MenuDelimiter.vue"
@@ -122,4 +122,6 @@ import UserMenu from "../Navigation/UserMenu.vue";
 import QueueList from "../../Icons/QueueList.vue";
 import InformationCircle from "../../Icons/InformationCircle.vue";
 import Document from "../../Icons/Document.vue";
+
+const route = useRoute();
 </script>

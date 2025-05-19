@@ -19,9 +19,9 @@
                     <div>
                         <div class="text-gray-200" v-html="message"/>
                         <div v-if="button" class="mt-xs">
-                            <Link :href="button.href">
+                            <router-link :to="button.href">
                                 <SecondaryButton @click="close">{{ button.name }}</SecondaryButton>
-                            </Link>
+                            </router-link>
                         </div>
                     </div>
                     <button @click="close" class="ml-2xl rtl:ml-0 rtl:mr-2xl hover:rotate-90 transition-transform ease-in-out duration-300">
@@ -34,8 +34,6 @@
 </template>
 <script setup>
 import {ref, onMounted, onUnmounted, computed, watch} from "vue";
-import {Link} from '@inertiajs/vue3';
-import {usePage} from "@inertiajs/vue3";
 import emitter from "@/Services/emitter";
 import SecondaryButton from "@/Components/Button/SecondaryButton.vue";
 import CheckIcon from "@/Icons/Check.vue"
@@ -46,16 +44,22 @@ const variant = ref('info');
 const message = ref('');
 const button = ref(null)
 const show = ref(false);
+const flash = ref({})
 
 let showTimeout = null;
 
 onMounted(() => {
-    emitter.on('notify', e => open(e.variant, e.message, e.button));
-});
+  emitter.on('flash', (newFlash) => {
+    flash.value = newFlash
+  })
+
+  emitter.on('notify', e => open(e.variant, e.message, e.button))
+})
 
 onUnmounted(() => {
-    emitter.off('notify');
-});
+  emitter.off('flash')
+  emitter.off('notify')
+})
 
 const open = (variantName, messageText, buttonObject) => {
     if (showTimeout) {
@@ -104,29 +108,18 @@ const variantColorClasses = computed(() => {
     }[variant.value]
 });
 
-// Flash Messages
-const flash = computed(() => {
-    return usePage().props.flash;
-});
-
-watch(() => flash.value, () => {
-    if (flash.value.success) {
-        open('success', flash.value.success);
-    }
-
-    if (flash.value.warning) {
-        open('warning', flash.value.warning);
-    }
-
-    if (flash.value.error) {
-        open('error', flash.value.error);
-    }
-
-    if (flash.value.info) {
-        open('info', flash.value.info);
-    }
-}, {
-    immediate: true,
-    deep: true
-})
+watch(flash, (newFlash) => {
+  if (newFlash.success) {
+    open('success', newFlash.success)
+  }
+  if (newFlash.warning) {
+    open('warning', newFlash.warning)
+  }
+  if (newFlash.error) {
+    open('error', newFlash.error)
+  }
+  if (newFlash.info) {
+    open('info', newFlash.info)
+  }
+}, { immediate: true, deep: true })
 </script>
