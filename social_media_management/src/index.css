@@ -4,10 +4,5 @@
 @import "./assets/css/overrideTooltip.css";
 @import "./assets/css/proseMirror.css";
 
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-
-
 /* @import './assets/Inter/inter.css';
 @import 'frappe-ui/src/style.css'; */

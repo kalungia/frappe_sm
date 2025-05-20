@@ -10,6 +10,7 @@ export default defineConfig({
   plugins: [
     frappeui({
       frappeProxy: true,
+      lucideIcons: true,
       jinjaBootData: true,
       buildConfig: {
         indexHtmlPath: '../frappe_sm/www/social_media_management.html',
