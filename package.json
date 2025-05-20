@@ -1,18 +1,14 @@
 {
-  "name": "frappe_sm",
-  "version": "1.0.0",
-  "description": "To Manage All Socail Media Accounts",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "postinstall": "cd social_media_management && yarn install",
-    "dev": "cd social_media_management && yarn dev",
-    "build": "cd social_media_management && yarn build"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "dependencies": {
-    "floating-vue": "^5.2.2"
-  }
+	"private": true,
+	"type": "module",
+	"workspaces": ["social_media_management", "frappe-ui"],
+	"scripts": {
+		"postinstall": "cd social_media_management && yarn install",
+		"dev": "cd social_media_management && yarn dev",
+		"build": "cd social_media_management && yarn build",
+		"disable-workspaces": "sed -i '' 's/\"workspaces\"/\"aworkspaces\"/g' package.json",
+		"enable-workspaces": "sed -i '' 's/\"aworkspaces\"/\"workspaces\"/g' package.json && rm -rf node_modules ./social_media_management/node_modules/ frappe-ui/node_modules/ && yarn install",
+		"upgrade-frappeui": "cd social_media_management && yarn add frappe-ui@latest && cd ..",
+		"disable-workspaces-and-upgrade-frappeui": "yarn disable-workspaces && yarn upgrade-frappeui"
+	}
 }
