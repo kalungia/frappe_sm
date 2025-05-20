@@ -35,7 +35,32 @@ export default defineConfig({
         start_url: '/social_media_management',
         description:
           'Modern Social Media Management tool to supercharge your social media operations',
-        icons: [],
+        icons: [
+          {
+            src: '/assets/frappe_sm/manifest/manifest-icon-192.maskable.png',
+            sizes: '192x192',
+            type: 'image/png',
+            purpose: 'any',
+          },
+          {
+            src: '/assets/frappe_sm/manifest/manifest-icon-192.maskable.png',
+            sizes: '192x192',
+            type: 'image/png',
+            purpose: 'maskable',
+          },
+          {
+            src: '/assets/frappe_sm/manifest/manifest-icon-512.maskable.png',
+            sizes: '512x512',
+            type: 'image/png',
+            purpose: 'any',
+          },
+          {
+            src: '/assets/frappe_sm/manifest/manifest-icon-512.maskable.png',
+            sizes: '512x512',
+            type: 'image/png',
+            purpose: 'maskable',
+          },          
+        ],
       },
     }),
   ],
