@@ -32,7 +32,7 @@
 
 <script setup>
 import {ref} from "vue";
-import { session } from '../data/session';
+import { session } from '../../data/session';
 import Dropdown from "@/Components/Dropdown/Dropdown.vue";
 import DropdownItem from "@/Components/Dropdown/DropdownItem.vue";
 import ArrowRightOnRectangleIcon from "@/Icons/ArrowRightOnRectangle.vue";
