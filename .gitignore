@@ -11,5 +11,5 @@ dist-ssr
 *.local
 frappe_sm/public/social_media_management
 social_media_management/yarn.lock
-frappe_sm/www/frappe_sm.html
+frappe_sm/www/social_media_management.html
 build
