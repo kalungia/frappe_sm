@@ -21,6 +21,14 @@ export default defineConfig({
     vue(),
     vueJsx(),
   ],
+  build: {
+    outDir: '../frappe_sm/public/social_media_management',
+    emptyOutDir: true,
+    commonjsOptions: {
+      include: [/tailwind.config.js/, /node_modules/],
+    },
+    sourcemap: true,
+  },
   resolve: {
     alias: {
       '@': path.resolve(__dirname, 'src'),
