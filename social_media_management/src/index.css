@@ -1,13 +1,10 @@
-@import 'frappe-ui/src/style.css';
-@import "./assets/css/fonts.css";
-@import "./assets/css/custom.css";
-@import "./assets/css/overrideTooltip.css";
-@import "./assets/css/proseMirror.css";
+@import 'frappe-ui/src/style.css' layer(base);
+@import './assets/css/fonts.css' layer(base);
+@import './assets/css/custom.css' layer(base);
+@import './assets/css/overrideTooltip.css' layer(base);
+@import './assets/css/proseMirror.css' layer(base);
 
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-
+@import 'tailwindcss';
 
 /* @import './assets/Inter/inter.css';
 @import 'frappe-ui/src/style.css'; */
