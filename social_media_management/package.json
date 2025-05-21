@@ -8,7 +8,7 @@
     "build": "vite build --base=/assets/frappe_sm/social_media_management/ && yarn copy-html-entry",
     "copy-html-entry": "cp ../frappe_sm/public/social_media_management/index.html ../frappe_sm/www/social_media_management.html",
     "serve": "vite preview"
-  },  
+  },
   "dependencies": {
     "frappe-ui": "^0.1.145",
     "pinia": "^3.0.2",
