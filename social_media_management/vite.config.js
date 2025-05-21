@@ -13,7 +13,7 @@ export default defineConfig({
       lucideIcons: true,
       jinjaBootData: true,
       buildConfig: {
-        indexHtmlPath: '../frappe_sm/www/social_media_management.html',
+        indexHtmlPath: '../frappe_sm/www/frappe_sm.html',
         emptyOutDir: true,
         sourcemap: true,
       },
@@ -32,7 +32,7 @@ export default defineConfig({
         display: 'standalone',
         name: 'Frappe SMM',
         short_name: 'Frappe SMM',
-        start_url: '/social_media_management',
+        start_url: '/frappe_sm',
         description:
           'Modern Social Media Management tool to supercharge your social media operations',
         icons: [

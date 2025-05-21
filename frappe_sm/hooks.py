@@ -228,4 +228,4 @@ app_license = "mit"
 # }
 
 
-website_route_rules = [{'from_route': '/social_media_management/<path:app_path>', 'to_route': 'social_media_management'},]
+website_route_rules = [{'from_route': '/frappe_sm/<path:app_path>', 'to_route': 'frappe_sm'},]
