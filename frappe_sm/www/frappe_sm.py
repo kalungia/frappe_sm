@@ -12,7 +12,7 @@ def get_context():
 	context = frappe._dict()
 	context.boot = get_boot()
 	if frappe.session.user != "Guest":
-		capture("active_site", "social_media_management")
+		capture("active_site", "frappe_sm")
 	return context
 
 
@@ -43,4 +43,4 @@ def get_boot():
 
 
 def get_default_route():
-	return "/social_media_management"
+	return "/frappe_sm"
