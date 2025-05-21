@@ -12,14 +12,28 @@ export default defineConfig({
       frappeProxy: true,
       lucideIcons: true,
       jinjaBootData: true,
-      buildConfig: {
-        indexHtmlPath: '../frappe_sm/www/frappe_sm.html',
-        emptyOutDir: true,
-        sourcemap: true,
-      },
     }), 
     vue(),
     vueJsx(),
+    {
+      name: 'transform-index.html',
+      transformIndexHtml(html, context) {
+        if (!context.server) {
+          return html.replace(
+            /<\/body>/,
+            `
+            <script>
+                {% for key in boot %}
+                window["{{ key }}"] = {{ boot[key] | tojson }};
+                {% endfor %}
+            </script>
+            </body>
+            `
+          )
+        }
+        return html
+      },
+    },
   ],
   build: {
     outDir: '../frappe_sm/public/social_media_management',
