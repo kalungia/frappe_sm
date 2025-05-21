@@ -12,6 +12,7 @@ export default defineConfig({
       frappeProxy: true,
       lucideIcons: true,
       jinjaBootData: true,
+      tailwindConfigFile: './tailwind.config.js',
     }),
     vue(),
     vueJsx(),
