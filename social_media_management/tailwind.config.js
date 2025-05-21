@@ -1,5 +1,5 @@
 import defaultTheme from 'tailwindcss/defaultTheme'
-import frappeUIPreset from 'frappe-ui/src/tailwind/preset'
+import frappeUIPreset from 'frappe-ui/src/tailwind/preset.js'
 
 export default {
   presets: [frappeUIPreset],
@@ -15,7 +15,7 @@ export default {
   theme: {
     extend: {
       colors: {
-        indigo: defaultTheme.colors.indigo,
+        ...defaultTheme.colors,
       },
     },
   },
