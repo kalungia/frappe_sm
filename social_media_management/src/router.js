@@ -5,7 +5,7 @@ import { userResource } from '@/data/user'
 const routes = [
   {
     path: '/',
-    name: 'Dashboard',
+    name: 'Home',
     component: () => import('@/pages/Home.vue'),
   },
   {
@@ -16,7 +16,7 @@ const routes = [
 ]
 
 let router = createRouter({
-  history: createWebHistory('/social_media_management'),
+  history: createWebHistory('/frappe_sm'),
   routes,
 })
 

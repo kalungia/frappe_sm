@@ -13,3 +13,4 @@ frappe_sm/public/social_media_management
 social_media_management/yarn.lock
 frappe_sm/www/frappe_sm.html
 build
+social_media_management/components.d.ts
