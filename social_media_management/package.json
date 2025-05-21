@@ -6,10 +6,11 @@
   "scripts": {
     "dev": "vite",
     "build": "vite build --base=/assets/frappe_sm/social_media_management/ && yarn copy-html-entry",
-    "copy-html-entry": "cp ../frappe_sm/public/social_media_management/index.html ../frappe_sm/www/frappe_sm.html",
+    "copy-html-entry": "cp dist/index.html ../frappe_sm/www/frappe_sm.html",
     "serve": "vite preview"
   },
   "dependencies": {
+    "floating-vue": "^5.2.2",
     "frappe-ui": "^0.1.145",
     "pinia": "^3.0.2",
     "socket.io-client": "^4.8.1",
