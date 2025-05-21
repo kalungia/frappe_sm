@@ -1,4 +1,3 @@
-@import 'frappe-ui/src/style.css' layer(base);
 @import './assets/css/fonts.css' layer(base);
 @import './assets/css/custom.css' layer(base);
 @import './assets/css/overrideTooltip.css' layer(base);
