@@ -1,4 +1,5 @@
 import defaultTheme from 'tailwindcss/defaultTheme'
+/** @type {import('tailwindcss').Config} */
 import frappeUIPreset from 'frappe-ui/src/tailwind/preset.js'
 
 export default {
@@ -11,7 +12,49 @@ export default {
     './node_modules/frappe-ui/frappe/**/*.{vue,js,ts,jsx,tsx}',
     '../node_modules/frappe-ui/frappe/**/*.{vue,js,ts,jsx,tsx}',
   ],
-  safelist: [{ pattern: /!(text|bg)-/, variants: ['hover', 'active'] }],
+  safelist: [
+    // Text and Background colors (dynamic usage)
+    { pattern: /^(bg|text|border|ring)-(red|green|blue|yellow|gray|stone|orange|cyan|indigo|facebook|twitter|mastodon)-(50|100|200|300|400|500|600|700|800|900)$/, variants: ['hover', 'focus', 'active', 'dark'] },
+  
+    // Padding & Margin utilities (e.g., py-2xl)
+    { pattern: /^(p|px|py|pt|pb|pl|pr)-(xs|sm|md|lg|xl|2xl)$/, variants: ['sm', 'md', 'lg'] },
+    { pattern: /^(m|mx|my|mt|mb|ml|mr)-(xs|sm|md|lg|xl|2xl)$/, variants: ['sm', 'md', 'lg'] },
+  
+    // Text alignment
+    { pattern: /^text-(left|center|right|justify)$/, variants: ['sm', 'md', 'lg'] },
+  
+    // Font weights and sizes
+    { pattern: /^font-(thin|light|normal|medium|semibold|bold|extrabold|black)$/, variants: ['sm', 'md'] },
+    { pattern: /^text-(xs|sm|base|lg|xl|2xl|3xl|4xl|5xl|6xl)$/, variants: ['sm', 'md'] },
+  
+    // Display utilities
+    { pattern: /^flex$/, variants: ['sm', 'md', 'lg'] },
+    { pattern: /^grid$/, variants: ['sm', 'md', 'lg'] },
+    { pattern: /^hidden$/, variants: ['sm', 'md', 'lg'] },
+  
+    // Widths & Heights
+    { pattern: /^w-(full|screen|min|max|auto|1\/2|1\/3|2\/3|1\/4|3\/4)$/, variants: ['sm', 'md', 'lg'] },
+    { pattern: /^h-(full|screen|min|max|auto)$/, variants: ['sm', 'md', 'lg'] },
+  
+    // Border Radius
+    { pattern: /^rounded(-(none|sm|md|lg|xl|2xl|3xl|full))?$/, variants: ['sm', 'md', 'lg'] },
+  
+    // Ring and shadow
+    { pattern: /^ring(-(0|1|2|4|8|inset))?$/, variants: ['focus', 'hover'] },
+    { pattern: /^shadow(-(sm|md|lg|xl|2xl|inner|none))?$/, variants: ['hover'] },
+  
+    // State modifiers for specific classes
+    { pattern: /^cursor-(pointer|not-allowed|default)$/, variants: ['hover', 'active'] },
+    { pattern: /^opacity-(0|25|50|75|100)$/, variants: ['hover', 'active'] },
+  
+    // Miscellaneous patterns (overflow, z-index, object-fit, etc.)
+    { pattern: /^overflow-(auto|hidden|visible|scroll)$/, variants: ['sm', 'md'] },
+    { pattern: /^z-(0|10|20|30|40|50|auto)$/, variants: ['sm', 'md'] },
+    { pattern: /^object-(contain|cover|fill|none|scale-down)$/, variants: ['sm', 'md'] },
+  
+    // Your original pattern for important colors
+    { pattern: /!(text|bg)-/, variants: ['hover', 'active'] },
+  ],  
   theme: {
     extend: {
       fontFamily: {
