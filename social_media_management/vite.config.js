@@ -20,49 +20,6 @@ export default defineConfig({
     }), 
     vue(),
     vueJsx(),
-    VitePWA({
-      registerType: 'autoUpdate',
-      workbox: {
-        maximumFileSizeToCacheInBytes: 5 * 1024 * 1024
-      },
-      devOptions: {
-        enabled: true,
-      },
-      manifest: {
-        display: 'standalone',
-        name: 'Frappe SMM',
-        short_name: 'Frappe SMM',
-        start_url: '/frappe_sm',
-        description:
-          'Modern Social Media Management tool to supercharge your social media operations',
-        icons: [
-          {
-            src: '/assets/frappe_sm/manifest/manifest-icon-192.maskable.png',
-            sizes: '192x192',
-            type: 'image/png',
-            purpose: 'any',
-          },
-          {
-            src: '/assets/frappe_sm/manifest/manifest-icon-192.maskable.png',
-            sizes: '192x192',
-            type: 'image/png',
-            purpose: 'maskable',
-          },
-          {
-            src: '/assets/frappe_sm/manifest/manifest-icon-512.maskable.png',
-            sizes: '512x512',
-            type: 'image/png',
-            purpose: 'any',
-          },
-          {
-            src: '/assets/frappe_sm/manifest/manifest-icon-512.maskable.png',
-            sizes: '512x512',
-            type: 'image/png',
-            purpose: 'maskable',
-          },          
-        ],
-      },
-    }),
   ],
   resolve: {
     alias: {
