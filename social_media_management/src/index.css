@@ -4,7 +4,6 @@
 @import './assets/css/proseMirror.css' layer(base);
 
 @import 'tailwindcss';
-
 @theme {
     --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
   
